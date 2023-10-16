@@ -2,7 +2,7 @@ const mqtt = require("mqtt");
 const fs = require("fs");
 const KEY = "./tls-key.pem";
 const CERT = "./tls-cert.pem";
-// const TRUSTED_CA_LIST = ["./crt.ca.cg.pem"];
+const TRUSTED_CA_LIST = ["./crt.ca.cg.pem"];
 
 const options = {
   host: "c57c8a7f0dbf4b2280337c6ff6700c71.s1.eu.hivemq.cloud",
@@ -13,7 +13,7 @@ const options = {
   keyPath: KEY,
   certPath: CERT,
   rejectUnauthorized: true,
-  //   ca: TRUSTED_CA_LIST,
+  ca: TRUSTED_CA_LIST,
 };
 
 const client = mqtt.connect(options);
